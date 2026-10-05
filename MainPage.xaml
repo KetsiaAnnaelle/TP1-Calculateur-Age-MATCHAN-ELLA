@@ -13,11 +13,20 @@
                    Placeholder="Votre nom"
                    FontSize="16" />
             <Label Text="Date de naissance" FontSize="16" />
-            <DatePicker Date="{Binding DateNaissance, Mode=TwoWay}" />
+                 <DatePicker Date="{Binding DateNaissance, Mode=TwoWay}"
+                       MaximumDate="{Binding DateMaximale}" />
+                 <Label Text="{Binding MessageErreurDate}"
+                     TextColor="Red"
+                     IsVisible="{Binding DateInvalide}" />
             <Button Text="Calculer" Command="{Binding CalculerCommand}" />
             <Label Text="{Binding Resultat}"
                    FontSize="20"
                    IsVisible="{Binding ResultatVisible}" />
+                 <Label Text="{Binding MessageMajorite}"
+                     IsVisible="{Binding ResultatVisible}" />
+                 <Label Text="{Binding MessageAnniversaire}"
+                     IsVisible="{Binding ResultatVisible}" />
+                 <Button Text="Effacer" Command="{Binding EffacerCommand}" />
         </VerticalStackLayout>
     </ScrollView>
 
